@@ -40,7 +40,7 @@
 　/home/deploy/setup.shの"SECRET_KEY_BASE="を修正します。  
 　web01と同じ文字列をコピー＆ペーストして保存します。  
 　不明な場合は、web01で/home/deploy/.bash_profileを確認してください。  
-　修正後下記コマンドを実行します。
+　修正後下記コマンドを実行します。  
 　bash setup.sh  
   
 5.この時点でP.303の状態になっていると思います。動作確認をしてみてください。  
