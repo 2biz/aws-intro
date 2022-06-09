@@ -24,17 +24,19 @@
 ・AWS_INTRO_SAMPLE_SMTP_USERNAME:P.263のアクセスキーを入力します。  
 ・AWS_INTRO_SAMPLE_SMTP_PASSWORD:P.263のシークレットキーを入力します。  
   
-2.通常のTerraformの構築手順に従います。(自分の環境はWindows11です。)  
+2.SSHキーペアをP.102～104に従い作成します。
+
+3.通常のTerraformの構築手順に従います。(自分の環境はWindows11です。)  
 　cd aws-intro  
 　terraform init  
 　terraform plan  
 　terraform apply  
   
-3.完了後、SSHでweb01に接続して下記を実行します。  
+4.完了後、SSHでweb01に接続して下記を実行します。  
 　sudo su - deploy  
 　bash setup.sh  
   
-4.SSHでweb02に接続して下記を実行します。  
+5.SSHでweb02に接続して下記を実行します。  
 　sudo su - deploy  
 
 　/home/deploy/setup.shの"SECRET_KEY_BASE="を修正します。  
@@ -43,4 +45,4 @@
 　修正後下記コマンドを実行します。  
 　bash setup.sh  
   
-5.この時点でP.303の状態になっていると思います。動作確認をしてみてください。  
+6.この時点でP.303の状態になっていると思います。動作確認をしてみてください。  
