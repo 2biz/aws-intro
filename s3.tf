@@ -42,7 +42,7 @@ resource "aws_s3_bucket_policy" "allow_access_from_another_account" {
         "Service":"ses.amazonaws.com"
       },
       "Action":"s3:PutObject",
-      "Resource":"${var.upload_resource}"
+      "Resource":"${var.mail_bucket_resource}"
     }
   ]
 }

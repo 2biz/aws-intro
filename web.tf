@@ -78,12 +78,16 @@ cd /var/www/aws-intro-sample
 
 bundle install
 secret=`rails secret`
+
 AWS_INTRO_SAMPLE_HOST="${var.AWS_INTRO_SAMPLE_HOST}"
 AWS_INTRO_SAMPLE_S3_BUCKET="${var.upload_bucket_name}"
 AWS_INTRO_SAMPLE_SMTP_DOMAIN="${var.domain_name}"
 AWS_INTRO_SAMPLE_SMTP_ADDRESS="${var.AWS_INTRO_SAMPLE_SMTP_ADDRESS}"
 AWS_INTRO_SAMPLE_SMTP_USERNAME="${var.AWS_INTRO_SAMPLE_SMTP_USERNAME}"
 AWS_INTRO_SAMPLE_SMTP_PASSWORD="${var.AWS_INTRO_SAMPLE_SMTP_PASSWORD}"
+
+echo $secret > ~/secret.txt
+aws s3 mv ~/secret.txt s3://$AWS_INTRO_SAMPLE_S3_BUCKET/
 
 echo export SECRET_KEY_BASE=$secret >> ~/.bash_profile
 echo 'export AWS_INTRO_SAMPLE_DATABASE_PASSWORD=password' >> ~/.bash_profile
@@ -188,6 +192,10 @@ AWS_INTRO_SAMPLE_SMTP_DOMAIN="${var.domain_name}"
 AWS_INTRO_SAMPLE_SMTP_ADDRESS="${var.AWS_INTRO_SAMPLE_SMTP_ADDRESS}"
 AWS_INTRO_SAMPLE_SMTP_USERNAME="${var.AWS_INTRO_SAMPLE_SMTP_USERNAME}"
 AWS_INTRO_SAMPLE_SMTP_PASSWORD="${var.AWS_INTRO_SAMPLE_SMTP_PASSWORD}"
+
+aws s3 mv s3://$AWS_INTRO_SAMPLE_S3_BUCKET/secret.txt ~/secret.txt
+secret=`cat ~/secret.txt`
+rm ~/secret.txt
 
 echo export SECRET_KEY_BASE=$secret >> ~/.bash_profile
 echo 'export AWS_INTRO_SAMPLE_DATABASE_PASSWORD=password' >> ~/.bash_profile

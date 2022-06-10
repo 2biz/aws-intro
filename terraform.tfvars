@@ -14,13 +14,12 @@ s_zone_id = "INPUT" #ゾーンID
 domain_name = "hoge-example.com"
 ses_record_name = "_amazonses.hoge-example.com"
 dkim_record_name = "_domainkey.hoge-example.com"
-dkim_record_records = "dkim.amazonses.com"
 
 
 ### S3 #################################################
 upload_bucket_name = "aws-intro-sample-upload.2biz.jp" #Upload用のS3バケット名
 mail_bucket_name = "aws-intro-sample-mailbox.2biz.jp"  #Mail用のS3バケット名
-upload_resource = "arn:aws:s3:::aws-intro-sample-mailbox.2biz.jp/*" #Upload用のS3バケットのARN
+mail_bucket_resource = "arn:aws:s3:::aws-intro-sample-mailbox.2biz.jp/*" #Mail用のS3バケットのARN
 
 ### SES ################################################
 email_address = "INPUT" #検証済メールアドレス

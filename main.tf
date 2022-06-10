@@ -8,9 +8,8 @@ variable s_zone_id {}
 variable domain_name {}
 variable ses_record_name {}
 variable dkim_record_name {}
-variable dkim_record_records {}
 variable acm_domain_name {}
-variable upload_resource {}
+variable mail_bucket_resource {}
 variable AWS_INTRO_SAMPLE_HOST {}
 variable AWS_INTRO_SAMPLE_SMTP_ADDRESS {}
 variable AWS_INTRO_SAMPLE_SMTP_USERNAME {}
